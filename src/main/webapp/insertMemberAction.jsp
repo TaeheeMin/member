@@ -36,8 +36,12 @@
 	
 	// 2. 요청처리
 	//db연결
-	Class.forName("org.mariadb.jdbc.Driver"); 
-	Connection conn = DriverManager.getConnection("jdbc:mariadb://127.0.0.1:3306/gdj58", "root", "java1234");
+	String driver = "org.mariadb.jdbc.Driver"; 
+	String dbUrl = "jdbc:mariadb://127.0.0.1:3306/gdj58";
+	String dbUser = "root";
+	String dbPw = "java1234";
+	Class.forName(driver);
+	Connection conn = DriverManager.getConnection(dbUrl, dbUser, dbPw);
 	
 	// 2-1. 중복검사
 	// select해서 데이터에 입력값과 동일한 값이 있는지 먼저 찾고 비교

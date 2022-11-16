@@ -12,9 +12,13 @@
 	String memberId = (String)session.getAttribute("loginMemberId");
 
 	//2. 요청 처리
-	// db 연결
-	Class.forName("org.mariadb.jdbc.Driver"); 
-	Connection conn = DriverManager.getConnection("jdbc:mariadb://127.0.0.1:3306/gdj58", "root", "java1234");
+	//db연결
+	String driver = "org.mariadb.jdbc.Driver"; 
+	String dbUrl = "jdbc:mariadb://127.0.0.1:3306/gdj58";
+	String dbUser = "root";
+	String dbPw = "java1234";
+	Class.forName(driver);
+	Connection conn = DriverManager.getConnection(dbUrl, dbUser, dbPw);
 	
 	// 2-1 현재 비밀번호 확인 및 수정
 	/*
