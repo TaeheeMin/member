@@ -14,6 +14,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+	
 		<meta charset="UTF-8">
 		<title>Login Form</title>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -36,18 +37,6 @@
 			a {
 				text-decoration: none;
 			}
-			a:link { 
-				color: black;
-				text-decoration: none;
-			}
-			a:visited { 
-				color: black;
-				text-decoration: none;
-			}
-			a:hover { 
-				color: blue; 
-				text-decoration: none;
-			}
 			input {
 				font-size: 15px;
 				border: 0;
@@ -57,6 +46,15 @@
 				background-color: rgb(233, 233, 233);
 			}
 		</style>
+		<script type="text/javascript">
+			<%
+			if(request.getParameter("msg") != null) {         
+				%>   
+				alert("<%=request.getParameter("msg")%>");
+				<%   
+			}
+			%>
+		</script>
 	</head>
 	
 	<body>
